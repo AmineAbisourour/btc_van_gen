@@ -1,4 +1,5 @@
-# btc_van_gen
+# Bitcoin vanity address generator
+
 a basic cli bitcoin vanity address generator.
 
 ### Clone repo
