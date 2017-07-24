@@ -4,7 +4,7 @@ a basic cli bitcoin vanity address generator.
 ### Clone repo
 
 ```sh
-git clone https://github.com/AmineAbisourour/btc_van_gen.git
+$ git clone https://github.com/AmineAbisourour/btc_van_gen.git
 ```
 
 ### Installation
@@ -19,5 +19,5 @@ $ npm install
 ### Use
 
 ```sh
-npm start
+$ npm start <yourVanity>
 ```
