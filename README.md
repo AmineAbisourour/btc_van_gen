@@ -1,12 +1,23 @@
 # btc_van_gen
 a basic cli bitcoin vanity address generator.
 
-# Clone repo
+### Clone repo
+
+```sh
 git clone https://github.com/AmineAbisourour/btc_van_gen.git
+```
 
-# Install dependencies
-cd btc_van_gen
-npm install
+### Installation
 
-# Use
-npm start 
+Install the dependencies.
+
+```sh
+$ cd btc_van_gen
+$ npm install
+```
+
+### Use
+
+```sh
+npm start
+```
