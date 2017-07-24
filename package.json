@@ -1,0 +1,16 @@
+{
+  "name": "btc_van_gen",
+  "version": "1.0.0",
+  "description": "generate bitcoin vanety address",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amine Abisourour",
+  "license": "ISC",
+  "dependencies": {
+    "beeper": "^1.1.1",
+    "bitcoinjs-lib": "^3.1.1"
+  }
+}
