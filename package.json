@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node index.js"
   },
-  "author": "Amine Abisourour",
-  "license": "ISC",
+  "author": "Amine Abisourour <amine.abisourour@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "beeper": "1.1.1",
     "bitcoinjs-lib": "3.1.1"
