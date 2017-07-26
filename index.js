@@ -1,10 +1,8 @@
 var bitcoin = require('bitcoinjs-lib');
-// var ECKey = require('bitcoinjs-lib/src/eckey');
 var beeper = require('beeper');
 var prefix = process.argv[2] || '';
 var prfxLen = prefix.length;
 
-// From Eugene Ware // Begin
 var base58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
 var error;
 
@@ -27,7 +25,6 @@ if (prefix && prfxLen) {
         process.exit(0);
     }
 }
-// From Eugene Ware // End
 
 console.log(prefix);
 beeper();
