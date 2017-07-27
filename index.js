@@ -25,20 +25,43 @@ if (prefix && prfxLen) {
     }
 }
 
+function timeConversion(millisec) {
+    
+    var seconds = (millisec / 1000).toFixed(1);
+    
+    var minutes = (millisec / (1000 * 60)).toFixed(1);
+    
+    var hours = (millisec / (1000 * 60 * 60)).toFixed(1);
+    
+    var days = (millisec / (1000 * 60 * 60 * 24)).toFixed(1);
+    
+    if (seconds < 60) {
+        return seconds + " Sec";
+    } else if (minutes < 60) {
+        return minutes + " Min";
+    } else if (hours < 24) {
+        return hours + " Hrs";
+    } else {
+        return days + " Days"
+    }
+}
+
 function msToTime(duration) {
-    var milliseconds = parseInt((duration%1000)/100)
+    var milliseconds = parseInt((duration))
     , seconds = parseInt((duration/1000)%60)
     , minutes = parseInt((duration/(1000*60))%60)
     , hours = parseInt((duration/(1000*60*60))%24);
-
-    hours = (hours < 10) ? "0" + hours : hours;
-    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    
+    hours = (hours !== 0 && hours < 10) ? "0" + hours + ":" : hours;
+    hours = (hours == '0') ? "" : hours;
+    minutes = (minutes !== 0 && minutes < 10) ? "0" + minutes + ":" : minutes;
+    minutes = (minutes == 0) ? "" : minutes;
     seconds = (seconds < 10) ? "0" + seconds : seconds;
-
-    return hours + ":" + minutes + ":" + seconds + "." + milliseconds + "s";
+    
+    return hours + minutes + seconds + "." + milliseconds + "s";
 }
 
-function btc_van_gen(prefix) {
+function getVanityBitcoinAddress(prefix) {
     beeper();
     console.log('Searching for an address that start with: ' + prefix + '...\n');
     var start = Date.now();
@@ -56,16 +79,17 @@ function btc_van_gen(prefix) {
         if (target === prefix) {
             hit = true;
             var end = Date.now();
-            if (tryN === 1) {
-                console.log('Got one from the first try in %dms', (end - start));
-            } else {
-                console.log('Got one after ' + tryN + ' tries in ' + msToTime(end - start));
+            // if (tryN === 1) {
+                // console.log('Got one from the first try in %dms', (end - start));
+                // } else {
+                    console.log('Got one after %s in %d try', timeConversion(end - start), tryN);
+                    // }
+                    console.log('Public Key (address): ' + address);
+                    console.log('Private Key (secret): ' + secret);
+                    beeper(3);
+                }
             }
-            console.log('Public Key (address): ' + address);
-            console.log('Private Key (secret): ' + secret);
-            beeper(3);
         }
-    }
-}
-
-btc_van_gen(prefix);
+        
+        getVanityBitcoinAddress(prefix);
+        
